@@ -13,12 +13,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button bRight;
     private Button bUp;
     private Button bDown;
+    private GameView gameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findView();
+        gameView = findViewById(R.id.game);
         /*bLeft = findViewById(R.id.button_left);
         bRight = findViewById(R.id.button_right);
         bUp = findViewById(R.id.button_up);
@@ -39,15 +41,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case (R.id.arrow_left):
                 Log.d("MainActivity","onClick: LEFT");
+                gameView.setPosX(gameView.getPosX()-50);
+                gameView.invalidate();
                 break;
             case (R.id.arrow_right):
                 Log.d("MainActivity","onClick: RIGHT");
+                gameView.setPosX(gameView.getPosX()+50);
+                gameView.invalidate();
                 break;
             case (R.id.arrow_down):
                 Log.d("MainActivity","onClick: DOWN");
+                gameView.setPosY(gameView.getPosY()+50);
+                gameView.invalidate();
                 break;
             case (R.id.arrow_up):
                 Log.d("MainActivity","onClick: UP");
+                gameView.setPosY(gameView.getPosY()-50);
+                gameView.invalidate();
                 break;
         }
     }
