@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bDown.setOnClickListener(this);*/
     }
     public void findView(){
-        findViewById(R.id.arrow_down).setOnClickListener(this);
+       findViewById(R.id.arrow_down).setOnClickListener(this);
         findViewById(R.id.arrow_right).setOnClickListener(this);
         findViewById(R.id.arrow_up).setOnClickListener(this);
         findViewById(R.id.arrow_left).setOnClickListener(this);
