@@ -49,18 +49,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case (R.id.arrow_right):
                 Log.d("MainActivity","onClick: RIGHT");
-                gameView.setPosX(gameView.getPosX()+50);
-                gameView.invalidate();
+                gameView.moveRight();
+               /* gameView.setPosX(gameView.getPosX()+50);
+                gameView.invalidate();*/
                 break;
             case (R.id.arrow_down):
                 Log.d("MainActivity","onClick: DOWN");
-                gameView.setPosY(gameView.getPosY()+50);
-                gameView.invalidate();
+                /*gameView.setPosY(gameView.getPosY()+50);
+                gameView.invalidate();*/
+                gameView.moveDown();
                 break;
             case (R.id.arrow_up):
                 Log.d("MainActivity","onClick: UP");
-                gameView.setPosY(gameView.getPosY()-50);
-                gameView.invalidate();
+                /*gameView.setPosY(gameView.getPosY()-50);
+                gameView.invalidate();*/
+                gameView.moveUp();
                 break;
         }
     }
