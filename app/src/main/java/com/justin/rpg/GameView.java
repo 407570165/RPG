@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 
 public class GameView extends View {
     float posY;
-    float posX;
+    float posX=400;
     private int iconWeight;
     private int iconHeight;
 
@@ -41,9 +41,18 @@ public class GameView extends View {
     public float getPosX() {
         return posX;
     }
-
+    public void moveLeft(){
+        if (posX>50)
+            posX-=50;
+            invalidate();
+    }
+    public void moveRight(){
+        if (posX<1200)
+            posX+=50;
+            invalidate();
+    }
     public void setPosY(float posY) {
-        if (posY>0&&posY<iconHeight-100){
+        if (posY>0&&posY<1500){
             this.posY=posY;
         }
     }

@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private static final String TAG =MainActivity.class.getSimpleName() ;
     private Button bLeft;
     private Button bRight;
     private Button bUp;
@@ -41,8 +42,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()){
             case (R.id.arrow_left):
                 Log.d("MainActivity","onClick: LEFT");
-                gameView.setPosX(gameView.getPosX()-50);
-                gameView.invalidate();
+                Log.d(TAG,"onclick: x"+gameView.getX());
+                /*gameView.setPosX(gameView.getPosX()-50);
+                gameView.invalidate();*///跟上下面的一樣
+                gameView.moveLeft();
                 break;
             case (R.id.arrow_right):
                 Log.d("MainActivity","onClick: RIGHT");
